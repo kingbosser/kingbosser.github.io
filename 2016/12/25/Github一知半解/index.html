@@ -1,0 +1,736 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="github," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="1.理解什么是githubGithub是分布式管理工具，每个人电脑都有一份完整的版本库，所以修改可以在本地进行，不必联网。Github有一个充当中央服务器的电脑，用于伙伴们对一个项目交换修改，如果没有中央服务器，就只能在同事之间的两台个人电脑之间交换修改。
+2.安装git（windows）Git最初是运行在linux和unix平台上的，所以要在windows上运行必须模拟linux和unix环境。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github一知半解">
+<meta property="og:url" content="http://yoursite.com/2016/12/25/Github一知半解/index.html">
+<meta property="og:site_name" content="KingBoss's Blog">
+<meta property="og:description" content="1.理解什么是githubGithub是分布式管理工具，每个人电脑都有一份完整的版本库，所以修改可以在本地进行，不必联网。Github有一个充当中央服务器的电脑，用于伙伴们对一个项目交换修改，如果没有中央服务器，就只能在同事之间的两台个人电脑之间交换修改。
+2.安装git（windows）Git最初是运行在linux和unix平台上的，所以要在windows上运行必须模拟linux和unix环境。">
+<meta property="og:updated_time" content="2016-12-25T08:32:26.104Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Github一知半解">
+<meta name="twitter:description" content="1.理解什么是githubGithub是分布式管理工具，每个人电脑都有一份完整的版本库，所以修改可以在本地进行，不必联网。Github有一个充当中央服务器的电脑，用于伙伴们对一个项目交换修改，如果没有中央服务器，就只能在同事之间的两台个人电脑之间交换修改。
+2.安装git（windows）Git最初是运行在linux和unix平台上的，所以要在windows上运行必须模拟linux和unix环境。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Github一知半解 | KingBoss's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">KingBoss's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">I have a dream</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Github一知半解
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-12-25T16:29:10+08:00" content="2016-12-25">
+              2016-12-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/25/Github一知半解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/25/Github一知半解/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-理解什么是github"><a href="#1-理解什么是github" class="headerlink" title="1.理解什么是github"></a>1.理解什么是github</h2><pre><code>Github是分布式管理工具，每个人电脑都有一份完整的版本库，所以修改可以在本地进行，不必联网。Github有一个充当中央服务器的电脑，用于伙伴们对一个项目交换修改，如果没有中央服务器，就只能在同事之间的两台个人电脑之间交换修改。
+</code></pre><h2 id="2-安装git（windows）"><a href="#2-安装git（windows）" class="headerlink" title="2.安装git（windows）"></a>2.安装git（windows）</h2><pre><code>Git最初是运行在linux和unix平台上的，所以要在windows上运行必须模拟linux和unix环境。Cygwin译为小型的UNIX模拟环境，牛人将模拟环境和Git打包生成msysgit(windows版的git)。[https://git-for-windows.github.io](https://git-for-windows.github.io)=&gt;按默认选项安装即可。
+</code></pre><p>注意：分布式管理器需要自报家门：<br><code>$ git config --global user.name &quot;Your Name&quot;</code><br><code>$ git config --global user.email &quot;email@example.com&quot;</code></p>
+<h2 id="3-本地仓库与远程仓库进行连接SSH密钥认证机制"><a href="#3-本地仓库与远程仓库进行连接SSH密钥认证机制" class="headerlink" title="3.本地仓库与远程仓库进行连接SSH密钥认证机制"></a>3.本地仓库与远程仓库进行连接SSH密钥认证机制</h2><pre><code>在个人电脑上生成密钥对，id_rsa（私钥）和id_rsa.pub（公钥存储在github远程端）。原理是，个人电脑发出请求（如登录），远程托管服务器收到请求并在宿主目录下寻找公钥，检测是否合法，合法就加密一随机数，发送给客户端，客户端用私钥进行解密再发送回服务器，服务器经过比较便可完成认证。
+</code></pre><p>生成密钥对：<br><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code><br>一路回车,其中，-t 指定ssh类型,-C添加一个新注释,最后将id_rsa.pub的内容copy到github服务器上.</p>
+<h2 id="4-本地仓库如何与远程仓库同步"><a href="#4-本地仓库如何与远程仓库同步" class="headerlink" title="4.本地仓库如何与远程仓库同步"></a>4.本地仓库如何与远程仓库同步</h2><blockquote>
+<ul>
+<li>第一种情况：本地仓库和远程仓库都已经建好，只需要关联一下就行</li>
+<li>第二种情况：远程仓库已经建好，本地仓库还没有，只需要克隆至本地就行</li>
+</ul>
+</blockquote>
+<p>如何建立本地仓库：</p>
+<ol>
+<li>选择一个合适的地方，创建一个空目，进入目录，显示当前目录<br><code>$ mkdir gitStudy</code><br><code>$ cd gitStudy</code><br><code>$ pwd</code></li>
+<li>通过git init命令把这个目录变成Git可以管理的仓库,成功后会有.git隐藏目录,可以查看隐藏文件<br><code>$ git init</code><br><code>$ ls -ah</code></li>
+</ol>
+<p>如何建立远程仓库：</p>
+<ol>
+<li>进入github官网，登录new一个repository就ok，最好远程和本地名字一致<br>关联两者：<br><code>$ git remote add origin git@github.com:kingbosser/gitStudy.git</code><br>克隆仓库：<br><code>$ git clone git@github.com:kingbosser/webTools.git</code><br>默认情况下只会克隆远程库的master分支，如果要克隆dev或其他分支至本地<br><code>$ git checkout -b dev origin/dev</code></li>
+</ol>
+<h2 id="5-如何管理自己的本地仓库"><a href="#5-如何管理自己的本地仓库" class="headerlink" title="5.如何管理自己的本地仓库"></a>5.如何管理自己的本地仓库</h2><pre><code>为了理解，我们将本地仓库管理过程比喻为你家承包了几百亩地，种植 不同的水果，终于到了丰收的季节，父亲联系了一位批发商来取货。一辆大货车停在路边，便开始采摘水果了，每个人一个背篓进入果场采摘，装满了便出林卸在货车上，货车装满，便运往公司。
+</code></pre><blockquote>
+<p>本地仓库管理也如此，在地里（工作区）每一次摘了一个水果放进背篓（暂存区）代表一次git add操作，装满后卸在货车上（master分支，可以有很多分支）代表一次git commit操作，货车装满后运往公司（origin master）代表一次git push操作。整个流程就算完毕。接下来介绍仓库管理常规操作</p>
+</blockquote>
+<ol>
+<li><code>$ git status</code> //查看版本库状态，有无修改</li>
+<li><code>$ git diff</code>   //查看具体修改细节</li>
+<li><code>$ git add</code>    //提交至暂存区</li>
+<li><code>$ git commit -m</code> “注释文字” //提交至本地分支</li>
+<li><code>$ git log</code>  //查看提交日志</li>
+<li>时光机</li>
+</ol>
+<ul>
+<li><p>返回到以前版本</p>
+<blockquote>
+<p>HEAD代表最新版本，HEAD^代表上一个版本，HEAD^^代表上上个版本，HEAD~100代表上第100个版本。<br>  <code>$ git reset --hard HEAD^</code>//回到上一个版本<br>  <code>$ git reset --hard 3782132</code>//回到指定版本，3782132代表版本commit id前几位</p>
+</blockquote>
+</li>
+<li><p>穿梭到未来版本</p>
+<blockquote>
+<p>穿梭到未来版本必须通过版本号，版本号不易记住，可以查看版本号<br>  <code>$ git relog</code>//查看每一次commit操作id<br>  <code>$ git reset --hard 127182</code>//跳转到未来的指定版本</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>撤销修改分为三种情况</li>
+</ol>
+<ul>
+<li><p>丢弃工作区的修改</p>
+<blockquote>
+<p><code>$ git checkout -- filename</code> //撤销工作区的全部修改，如果没有add至暂存区，则回来版本库原样，如果已经add至暂存区，则回到暂存区的状态。</p>
+</blockquote>
+</li>
+<li><p>丢弃暂存区的修改</p>
+<blockquote>
+<p><code>$ git reset HEAD filename</code> //撤销暂存区的所有修改，回到工作区状态</p>
+</blockquote>
+</li>
+<li><p>丢弃分支的修改</p>
+<blockquote>
+<p>使用版本回退</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li><p>删除文件</p>
+<blockquote>
+<p>手动删除或这使用命令<br> <code>$ rm filename</code><br> 确实要删：<code>$ git rm file name</code><br> 犯傻误删:<code>$ git checkout -- filename</code></p>
+</blockquote>
+</li>
+</ol>
+<h2 id="6-分支管理"><a href="#6-分支管理" class="headerlink" title="6.分支管理"></a>6.分支管理</h2><ol>
+<li>创建新分支</li>
+</ol>
+<blockquote>
+<p><code>$ git branch dev</code>//创建dev分支<br> <code>$ git checkout -b dev</code>//创建并切换到dev分支<br> <code>$ git branch</code>//查看所有分支，带*的为当前分支<br> <code>$ git checkout dev</code>//切换到dev分支<br> <code>$ git merge dev</code>//合并dev分支到master分支<br> <code>$ git branch -d dev</code>//删除dev分支<br> <code>$ git branch -D dev</code>//强行删除dev分支</p>
+</blockquote>
+<ol>
+<li>冲突管理</li>
+</ol>
+<blockquote>
+<p>当合并分支时，如果提示有冲突，则需手动清除冲突，然后再add+commit，最后删除dev分支。合并分支默认以Fast-forward形式，这种形式下删除分支会丢掉分支信息，看不出之前做过合并；若禁用Fast-forward形式，会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。<br><code>$ git merge --no-ff- -m &quot;注释性文字&quot; dev</code>//禁用Fast-forward<br><code>$ git log --graph (--pretty=oneline --abbrev-commit)</code>//查看合并分支图</p>
+</blockquote>
+<pre><code>最佳实践：master是最稳定的，只有发布稳定版本的时候才更新。工作统一在dev分支上，每个人有自己的个人分支
+</code></pre><ol>
+<li>现场保存和恢复</li>
+</ol>
+<blockquote>
+<p><code>$ git stash</code>//保存现场<br><code>$ git stash list</code>//查看现场保存目录列表<br><code>$ git stash apply</code>//恢复现场，stash内容不删除<br><code>$ git stash drop</code>//删除stash内容<br><code>$ git stash pop</code>//恢复现场并删除stash内容</p>
+</blockquote>
+<ol>
+<li>多人协作</li>
+</ol>
+<blockquote>
+<p><code>$ git remote</code>//查看远程库信息<br><code>$ git remote -v</code>//查看远程库详细信息<br>本地新建的分支如果不推送到远程，对其他人就是不可见的；<br><code>$ git push origin branch-name</code>//从本地推送分支<br>如果推送失败，先用git pull抓取远程的新提交；<br><code>$ git pull</code>//抓取远程新提交<br><code>$ git checkout -b branch-name origin/branch-name</code>//在本地创建和远程分支对应的分支，本地和远程分支的名称最好一致；<br><code>$ git branch --set-upstream branch-name origin/branch-name</code>//建立本地分支和远程分支的关联.从远程抓取分支，使用git pull，如果有冲突，要先处理冲突</p>
+</blockquote>
+<h2 id="7-标签管理"><a href="#7-标签管理" class="headerlink" title="7.标签管理"></a>7.标签管理</h2><pre><code>标签（tag）是一个版本的快照，虽然说存在commit id，但是很难记，tag是一个有意义的名字，方便记忆，与commit绑定在一起，tag是静态的，不能移动，commit可以移动。
+</code></pre><ol>
+<li>创建标签<br><code>$ git tag v1.0</code>//切换到目的分支上，默认为最新commit打标签<br><code>$ git tag</code>//查看所有标签<br><code>$ git tag v1.0 commit-id</code>//给指定commit打标签<br><code>$ git show v1.0</code>//查看指定tag信息<br><code>$ git tag -a v0.1 -m &quot;说明性文字&quot; commit-id</code>//添加带说明的标签<br><code>$ git tag -s &lt;tagname&gt; -m &quot;说明性文字&quot;</code>//PGP签名标签名，tag采用PGP签名，必须首先安装gpg（GnuPG），如果没有找到gpg，或者没有gpg密钥对，就会报错。</li>
+<li>推送和删除标签<br><code>$ git push origin v1.0</code>//推送标签、<br><code>$ git push origin --tags</code>//一次性推送所有标签<br><code>$ git tag -d &lt;tagname&gt;</code>//删除本地标签<br><code>$ git push origin :refs/tags/&lt;tagname&gt;</code>//删除远程标签</li>
+</ol>
+<h2 id="8-参与开源项目"><a href="#8-参与开源项目" class="headerlink" title="8.参与开源项目"></a>8.参与开源项目</h2><pre><code>访问开源项目点“Fork”在自己的账号下克隆了一个仓库，然后从自己的账号下clone。如果修复项目的一个bug，或者新增一个功能，立刻就可以开始干活，干完后，往自己的仓库推送。如果你希望bootstrap的官方库能接受你的修改，你就可以在GitHub上发起一个pull request。当然，对方是否接受你的pull request就不一定了。
+</code></pre><h2 id="9-更多配置"><a href="#9-更多配置" class="headerlink" title="9.更多配置"></a>9.更多配置</h2><ol>
+<li>忽略文件<blockquote>
+<p>编写.gitignore文件，在这里都有<a href="https://github.com/github/gitignore" target="_blank" rel="external">https://github.com/github/gitignore</a><br>如果想提交被忽略的文件，可以强制提交或者查看.gitignore文件明细<br><code>git add -f filename</code>//强制提交文件<br><code>git check-ignore -v filename</code>//查看文件在何处被忽略</p>
+</blockquote>
+</li>
+<li><p>配置别名<br><code>$ git config --global alias.st status</code>//st代表status<br><code>$ git config --global alias.co checkout</code>//co代表checkout<br><code>$ git config --global alias.ci commit</code>//ci代表commit<br><code>$ git config --global alias.br branch</code>//br代表branch<br><code>$ git config --global alias.unstage &#39;reset HEAD&#39;</code>//unstage代表reset HEAD<br><code>$ git config --global alias.last &#39;log -1&#39;</code>//last代表log -1最新提交</p>
+<blockquote>
+<p>查看配置文件：每个仓库的Git配置文件都放在.git/config文件中，别名就在[alias]后面，要删除别名，直接把对应的行删掉即可<br> <code>cat .git/config</code></p>
+</blockquote>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/github/" rel="tag">#github</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/02/Excel复习之实验篇/" rel="next" title="Excel复习之实验篇">
+                <i class="fa fa-chevron-left"></i> Excel复习之实验篇
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/25/Github一知半解/"
+           data-title="Github一知半解" data-url="http://yoursite.com/2016/12/25/Github一知半解/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="kingboss" />
+          <p class="site-author-name" itemprop="name">kingboss</p>
+          <p class="site-description motion-element" itemprop="description">my blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kingbosser" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/kingbosser" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/kingbosser" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-理解什么是github"><span class="nav-number">1.</span> <span class="nav-text">1.理解什么是github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装git（windows）"><span class="nav-number">2.</span> <span class="nav-text">2.安装git（windows）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-本地仓库与远程仓库进行连接SSH密钥认证机制"><span class="nav-number">3.</span> <span class="nav-text">3.本地仓库与远程仓库进行连接SSH密钥认证机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-本地仓库如何与远程仓库同步"><span class="nav-number">4.</span> <span class="nav-text">4.本地仓库如何与远程仓库同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-如何管理自己的本地仓库"><span class="nav-number">5.</span> <span class="nav-text">5.如何管理自己的本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-分支管理"><span class="nav-number">6.</span> <span class="nav-text">6.分支管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-标签管理"><span class="nav-number">7.</span> <span class="nav-text">7.标签管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-参与开源项目"><span class="nav-number">8.</span> <span class="nav-text">8.参与开源项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-更多配置"><span class="nav-number">9.</span> <span class="nav-text">9.更多配置</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kingboss</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"kingbosser"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
